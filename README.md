@@ -16,6 +16,8 @@ Versions lower than 1.3.1 were removed due to complete unstability.
 ```py
 $ pip install mesl
 ```
+PyPi: https://pypi.org/project/meslib
+
 ## Issues
 
 Bug / Issue reports are welcome, if you feel like reporting an issue, go ahead.

@@ -11,16 +11,15 @@ WARNING:
 Versions lower than 1.4 might be unstable and incomplete; Some of their features are broken and might not work.
 Versions lower than 1.3.1 were removed due to complete unstability.
 
-
 ## Installation
 
 ```py
 $ pip install mesl
 ```
-
 ## Issues
 
 Bug / Issue reports are welcome, if you feel like reporting an issue, go ahead.
+
 
 
 ## Features

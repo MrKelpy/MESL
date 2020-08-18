@@ -14,20 +14,30 @@ $ pip install mesl
 
 Bug / Issue reports are welcome, if you feel like reporting an issue, go ahead.
 
-### Examples
+
+## Features
+### Basic
 
 ```py
 import mesl
 #Creating the MC Environment
 
 #While doing so, Use only the version down to their decimals. Ex: 1.16 = Correct // 1.16.1 = Wrong
-mc = Mc.Minecraft('1.16')
+mc = Mc.Minecraft('primary.secondary')
+#Available from ALPHA - 1.16
 
 
 #Attacking
-mc.attack(times=2, cooldown=0.5)
+#"times" is the amount of times the user will be repeating the task.
+#"cooldown" is the amount of time in seconds that the user will wait between tasks.
+mc.attack(times = int, cooldown = float)
 
-#Destroying
-#Press time is the amount of time in secs that the player will be holding down the DESTROY/ATTACK button.
-mc.destroy(times=1, pressTime = 5, cooldown = 0.5)
+#Destroying blocks
+#"pressTime" is the amount of time in secs that the player will be holding down the button to perform the task.
+mc.destroy(times = int, pressTime = float, cooldown = float)
+
+#Placing blocks
+mc.place(times = int, cooldown = float)
+
+#
 ```

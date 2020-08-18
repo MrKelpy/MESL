@@ -22,8 +22,8 @@ Bug / Issue reports are welcome, if you feel like reporting an issue, go ahead.
 
 ```py
 import mesl
-#Creating the MC Environment
 
+#Creating the MC Environment
 #While doing so, Use only the version down to their decimals. Ex: 1.16 = Correct // 1.16.1 = Wrong
 mc = Mc.Minecraft('primary.secondary')
 #Available from ALPHA - 1.16

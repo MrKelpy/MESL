@@ -20,7 +20,7 @@ Bug / Issue reports are welcome, if you feel like reporting an issue, go ahead.
 ## Features
 ### Basic
 
-```py
+```js
 import mesl
 
 #Creating the MC Environment
@@ -54,4 +54,17 @@ mc.walk(direction = str, blocks = int, seconds = float)
 #Jumping
 mc.jump(direction = str, times = int, cooldown = float)
 
-```
+#Hold Shift
+mc.hold_shift()
+
+#Release Shift
+mc.unshift()
+
+#Shift
+#"sneaktime" is an alias for "pressTime"
+mc.shift(times = int, sneaktime = float, cooldown = float)
+
+#Swap Hands
+mc.swap_to_offhand()```
+
+

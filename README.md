@@ -3,6 +3,8 @@ This library is designed to create External minecraft scripts. Hence the name ME
 It is NOT a library for creating plugins or forge modifications, clients or datapacks.
 The usage of this library may be against the rules of some Minecraft Servers. Use it at your own risk.
 
+The library is fully configurable, you can change the feature keybinds/functions accordingly to your in-game settings, using config.py.
+
 
 ## Installation
 
@@ -39,5 +41,17 @@ mc.destroy(times = int, pressTime = float, cooldown = float)
 #Placing blocks
 mc.place(times = int, cooldown = float)
 
-#
+#Using containers, items, blocks
+mc.use(times = int, pressTime = float, cooldown = float)
+
+#Walking
+#"direction" is the direction the player will walk. Since there is no "turn" feature, all directions are implemented.
+#Allowed Directions : 'fwd': MOVE_FORWARD, 'forward': MOVE_FORWARD, 'front': MOVE_FORWARD, 'bwd': MOVE_BACKWARDS, 'backwards': MOVE_BACKWARDS, 'back': MOVE_BACKWARDS,'right': MOVE_RIGHT, 'left': MOVE_LEFT
+#"blocks" is the amount of blocks the player will walk in a certain "direction" (OPTIONAL)
+#"seconds" is the time in seconds the player will talk in a certain "direction" (OPTIONAL)
+mc.walk(direction = str, blocks = int, seconds = float)
+
+#Jumping
+mc.jump(direction = str, times = int, cooldown = float)
+
 ```

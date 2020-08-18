@@ -63,8 +63,63 @@ mc.unshift()
 #Shift
 #"sneaktime" is an alias for "pressTime"
 mc.shift(times = int, sneaktime = float, cooldown = float)
+```
+
+### Inventory
+
+```js
+#Opening Inventory
+mc.inv()
+OR
+mc.inventory()
+
+#Selecting slots
+#The library offers a general mapping of all slots in Minecraft, including container and inventory slots.
+mc.slot(slotType = SlotNumber)
+'''Available Mapped SlotTypes: invslot = None, doubleinv = None, armor = None, craft = None, shield = None, brewing_stand = None, grindstone = None, cartography = None, dropper = None, enchant = None, furnace = None, crafting_table = None, anvil = None, chest = None, doublechest = None, smithing_table = None, shulker = None, dispenser = None, blast_furnace = None, smoker = None'''
+
+#Switching Hotbar
+#Hotbars are mapped from 1-9 respectively
+mc.hotbar(slot=slot)
+
+#Dropping Items
+#"whole", when set to True, drops the whole hotbar.
+#"amount" drops the specified amount of items in the hotbar.
+mc.drop(whole = Bool, amount = int)
+
+#Send item to Hotbar
+#"dest" is the destination (In the hotbar) for the selected item to go to.
+mc.sendtohotbar(dest = int)
 
 #Swap Hands
-mc.swap_to_offhand()```
+mc.swap_to_offhand()
+```
 
+### Chat
 
+```js
+#Understanding Affirmations
+'''Affirmations are the objects of the chat messages. All the chat messages are returned in the form of Affirmation Objects. 
+You can retrieve "author", "text", "msg" and "id" from an Affirmation.
+
+affirmation = mc.getchat(limit = 1) 
+- This returns the last chat message in the form of an Affirmation Object. If you set the limit to anything other than 1, it will return a list with Affirmation Objects (Representing the messages). (Unless you set the limit to 0, in which case it'll return None.) -
+ 
+Let's say the message is: "<ComradeElmo> Hello world!"
+
+The library will parse the data from the message, and will return it in the form of an Affirmation Object. You can then retrieve that data with, (based on the example above):
+
+affirmation.author ='ComradeElmo'
+affirmation.text = 'Hello World!'
+affirmation.msg = "<ComradeElmo> Hello world!"
+affirmation.id = The message ID. This is ID is static, meaning, it will not be changed. Each message has an unique ID.'''
+
+#Getting the Chat
+#"limit" is the limit of messages to get from the chat. The first message returned is the last message.
+#This function returns the last chat message in the form of an Affirmation Object. If you set the limit to anything other than 1, it will return a list with Affirmation Objects (Representing the messages). (Unless you set the limit to 0, in which case it'll return None.)
+#DEFAULT - limit : 20
+message = mc.getchat(limit = int)
+
+#Sending a message
+#This will clear the chat and send a message.
+mc.say(text = str)```

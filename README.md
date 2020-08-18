@@ -91,6 +91,10 @@ mc.drop(whole = Bool, amount = int)
 #"dest" is the destination (In the hotbar) for the selected item to go to.
 mc.sendtohotbar(dest = int)
 
+#Picking/Placing the item
+#"relative" Changes the action of left clicking to pick the whole slot up/placing the whole slot up, to the right click action, doing it relatively to the amount of items in the slot.
+mc.pickplace(relative = Bool)
+
 #Swap Hands
 mc.swap_to_offhand()
 ```

@@ -3,6 +3,7 @@ This library is designed to create External Minecraft Scripts. Hence the name ME
 It is NOT a library for creating plugins or forge modifications, clients or datapacks.
 The usage of this library may be against the rules of some Minecraft Servers. Use it at your own risk.
 
+The library works on all OS's.
 The library is fully configurable, you can change the feature keybinds/functions accordingly to your in-game settings, using config.py.
 
 Lastest Version: 1.4.2

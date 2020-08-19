@@ -5,7 +5,7 @@ The usage of this library may be against the rules of some Minecraft Servers. Us
 
 The library is fully configurable, you can change the feature keybinds/functions accordingly to your in-game settings, using config.py.
 
-Lastest Version: 1.4
+Lastest Version: 1.4.1
 
 WARNING:
 Versions lower than 1.4 might be unstable and incomplete; Some of their features are broken and might not work.

@@ -14,7 +14,7 @@ Versions lower than 1.3.1 were removed due to complete unstability.
 ## Installation
 
 ```py
-$ pip install mesl
+$ pip install meslib
 ```
 PyPi: https://pypi.org/project/meslib
 
@@ -120,7 +120,7 @@ Let's say the message is: "<ComradeElmo> Hello world!"
 
 The library will parse the data from the message, and will return it in the form of an Affirmation Object. You can then retrieve that data with, (based on the example above):
 
-affirmation.author ='ComradeElmo'
+affirmation.author = 'ComradeElmo'
 affirmation.text = 'Hello World!'
 affirmation.msg = "<ComradeElmo> Hello world!"
 affirmation.id = The message ID. This is ID is static, meaning, it will not be changed. Each message has an unique ID.'''

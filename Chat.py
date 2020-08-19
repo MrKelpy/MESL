@@ -33,6 +33,9 @@ class Chat():
             idbase = history[0].split('|ID|')
             id = idbase[1].strip()
             base = idbase[0]
+            codes = ['§1', '§2', '§3', '§4', '§5', '§6', '§7', '§8', '§9',
+                     '§a', '§b', '§c', '§d', '§e', '§f',
+                     '§k', '§l', '§m', '§n', '§o', '§r']
             try:
                 ' '.join(base).strip()
                 base = base.split(CHAR_BEFORE_NAME)[1]
@@ -47,6 +50,12 @@ class Chat():
             except:
                 try:
                     msg = base.strip()
+                    for i in codes:
+                        try:
+                            msg = msg.split(i)
+                            msg = ''.join(msg)
+                        except:
+                            continue
                     affirmation = Affirmation(None, msg.strip(), id.strip())
                     TrueHistory.append(affirmation)
                     history.pop(0)

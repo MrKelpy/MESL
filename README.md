@@ -124,13 +124,15 @@ affirmation = mc.getchat(limit = 1)
  
 Let's say the message is: "<ComradeElmo> Hello world!"
 
+
 The library will parse the data from the message, and will return it in the form of an Affirmation Object. You can then retrieve that data with, (based on the example above):
-NOTE: Affirmations do not contain color codes.
+
 
 affirmation.author = 'ComradeElmo'
-affirmation.text = 'Hello World!'
+affirmation.text = 'Hello World!' 
 affirmation.msg = "<ComradeElmo> Hello world!"
-affirmation.id = The message ID. This is ID is static, meaning, it will not be changed. Each message has an unique ID.'''
+affirmation.id = The message ID. This ID is static, meaning, it will not be changed. Each message has an unique ID.'''
+NOTE: Affirmations do not contain color codes.
 
 #Getting the Chat
 #"limit" is the limit of messages to get from the chat. The first message returned is the last message.

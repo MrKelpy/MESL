@@ -20,6 +20,8 @@ class Chat():
 
 
     def parse_chat_history(self, limit):
+        if limit is None:
+            limit = 50**50
         chat = self.get_chathistory()
         history = []
         TrueHistory = []

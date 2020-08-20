@@ -57,10 +57,11 @@ mc.use(times = int, pressTime = float, cooldown = float)
 #Allowed Directions : 'fwd': MOVE_FORWARD, 'forward': MOVE_FORWARD, 'front': MOVE_FORWARD, 'bwd': MOVE_BACKWARDS, 'backwards': MOVE_BACKWARDS, 'back': MOVE_BACKWARDS,'right': MOVE_RIGHT, 'left': MOVE_LEFT
 #"blocks" is the amount of blocks the player will walk in a certain "direction" (OPTIONAL)
 #"seconds" is the time in seconds the player will talk in a certain "direction" (OPTIONAL)
-mc.walk(direction = str, blocks = int, seconds = float)
+#"spring" declares whether you will be sprinting or not.
+mc.walk(direction = str, blocks = int, seconds = float, sprint = bool)
 
 #Jumping
-mc.jump(direction = str, times = int, cooldown = float)
+mc.jump(direction = str, times = int, cooldown = float, sprint = bool)
 
 #Hold Shift
 mc.hold_shift()
@@ -71,6 +72,10 @@ mc.unshift()
 #Shift
 #"sneaktime" is an alias for "pressTime"
 mc.shift(times = int, sneaktime = float, cooldown = float)
+
+#Open MC's Window
+#This is used to open the Minecraft Environment. (If it is closed after created)
+mc.goto_mc()
 ```
 
 ### Inventory
@@ -131,6 +136,7 @@ affirmation.id = The message ID. This is ID is static, meaning, it will not be c
 #"limit" is the limit of messages to get from the chat. The first message returned is the last message.
 #This function returns the last chat message in the form of an Affirmation Object. If you set the limit to anything other than 1, it will return a list with Affirmation Objects (Representing the messages). (Unless you set the limit to 0, in which case it'll return None.)
 #DEFAULT - limit : 20
+#If the limit is set to None, it'll return all the messages.
 message = mc.getchat(limit = int)
 
 #Sending a message

@@ -14,7 +14,7 @@ class Affirmation():
 class Chat():
 
     def get_chathistory(self):
-        with open(os.getenv("APPDATA") + "/.minecraft/logs/latest.log", "r", encoding='utf-8') as lines:
+        with open(os.getenv("APPDATA") + "/.minecraft/logs/latest.log", "r") as lines:
             log = lines.readlines()
             return log
 

@@ -14,12 +14,14 @@ class Affirmation():
 class Chat():
 
     def get_chathistory(self):
-        with open(os.getenv("APPDATA") + "/.minecraft/logs/latest.log", "r") as lines:
+        with open(os.getenv("APPDATA") + "/.minecraft/logs/latest.log", "r", encoding='utf-8') as lines:
             log = lines.readlines()
             return log
 
 
     def parse_chat_history(self, limit):
+        if limit is None:
+            limit = 50**50
         chat = self.get_chathistory()
         history = []
         TrueHistory = []

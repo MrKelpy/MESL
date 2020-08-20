@@ -10,6 +10,7 @@ ATTACK = 'left' #Attack or Destroy
 USE = 'right' #Or Place Block
 JUMP = 'space'
 CROUCH = 'left_shift'
+SPRINT = 'left_ctrl'
 OPEN_CHAT = 't'
 OPEN_INVENTORY = 'e'
 DROP = 'q'

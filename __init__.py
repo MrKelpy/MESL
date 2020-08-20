@@ -45,6 +45,8 @@ class Minecraft(Chat, Inventory):
                         super().__init__(window, self.versionLevel, self.version)
                         time.sleep(0.1)
                         break
+                else:
+                    raise_error(MinecraftClientNotFound, f"Couldn't find any {self.version} Minecraft Client launched.")
             except:
                 raise_error(MinecraftClientNotFound, f"Couldn't find any {self.version} Minecraft Client launched.")
         else:
@@ -80,13 +82,18 @@ class Minecraft(Chat, Inventory):
             time.sleep(cooldown)
 
 
-    def walk(self, direction: str, blocks: int = 1, seconds: float = 0):
+    def walk(self, direction: str, blocks: int = 1, seconds: float = 0, sprint: bool = False):
         authorized_directions = {'fwd': MOVE_FORWARD, 'forward': MOVE_FORWARD, 'front': MOVE_FORWARD,
                                  'bwd': MOVE_BACKWARDS, 'backwards': MOVE_BACKWARDS, 'back': MOVE_BACKWARDS,
                                  'right': MOVE_RIGHT, 'left': MOVE_LEFT}
         if direction in authorized_directions:
             direction_variable = authorized_directions[str(direction)]
             if seconds != 0:
+                if sprint is True:
+                    keyboard.press(SPRINT)
+                    keyboard.press_and_release('Backspace')
+                    time.sleep(0.3)
+                    keyboard.release(SPRINT)
                 keyboard.press(direction_variable)
                 keyboard.press_and_release('backspace')
                 time.sleep(seconds)
@@ -94,6 +101,11 @@ class Minecraft(Chat, Inventory):
                 keyboard.press_and_release('backspace')
             else:
                 block_maths = blocks * 0.23164234422025
+                if sprint is True:
+                    keyboard.press(SPRINT)
+                    keyboard.press_and_release('Backspace')
+                    time.sleep(0.3)
+                    keyboard.release(SPRINT)
                 keyboard.press(direction_variable)
                 keyboard.press_and_release('backspace')
                 time.sleep(block_maths)
@@ -106,7 +118,7 @@ class Minecraft(Chat, Inventory):
                         f'Unknown direction "{direction}". Please choose one of the following directions: {error_directions}')
 
 
-    def jump(self, direction: str = None, times: int = 1, cooldown: float = 0.1):
+    def jump(self, direction: str = None, times: int = 1, cooldown: float = 0.1, sprint: bool = False):
         authorized_directions = {'fwd': MOVE_FORWARD, 'forward': MOVE_FORWARD, 'front': MOVE_FORWARD,
                                  'bwd': MOVE_BACKWARDS, 'backwards': MOVE_BACKWARDS, 'back': MOVE_BACKWARDS,
                                  'right': MOVE_RIGHT, 'left': MOVE_LEFT}
@@ -119,6 +131,11 @@ class Minecraft(Chat, Inventory):
                 time.sleep(cooldown)
         else:
             if direction in authorized_directions:
+                if sprint is True:
+                    keyboard.press(SPRINT)
+                    keyboard.press_and_release('Backspace')
+                    time.sleep(0.3)
+                    keyboard.release(SPRINT)
                 direction_variable = authorized_directions[str(direction)]
                 keyboard.press(direction_variable)
                 keyboard.press_and_release('backspace')
@@ -153,3 +170,19 @@ class Minecraft(Chat, Inventory):
             time.sleep(sneaktime)
             keyboard.release(CROUCH)
             time.sleep(cooldown)
+
+
+    def goto_mc(self):
+        minecraftWindows = pygetwindow.getWindowsWithTitle('Minecraft')
+        for window in minecraftWindows:
+            if f'Minecraft {self.version}' in window.title:
+                window.activate()
+                time.sleep(0.05)
+                window.maximize()
+                keyboard.press_and_release('Escape')
+                time.sleep(0.1)
+                break
+            else:
+                raise_error(MinecraftClientNotFound, f"Couldn't find any {self.version} Minecraft Client launched.")
+        else:
+            raise_error(MinecraftClientNotFound, f"Couldn't find any {self.version} Minecraft Client launched.")

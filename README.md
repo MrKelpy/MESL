@@ -15,7 +15,7 @@ Versions lower than 1.3.1 were removed due to complete unstability.
 ## Installation
 
 ```py
-$ pip install meslib
+pip install meslib
 ```
 PyPi: https://pypi.org/project/meslib
 

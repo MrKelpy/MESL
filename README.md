@@ -1,7 +1,7 @@
 # MESL
 
 ## This library will be rewritten soon.
-### If you are looking solely to interact with the in-game chat, use look into https://github.com/MrKelpy/PyMChat
+### If you are looking solely to interact with the in-game chat, look into https://github.com/MrKelpy/PyMChat
 
 This library is designed to create External Minecraft Scripts. Hence the name MESL (Minecraft External Script Library).
 It is NOT a library for creating plugins or forge modifications, clients or datapacks.
